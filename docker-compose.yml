@@ -12,6 +12,7 @@ services:
   rancher:
     image: rancher/rancher:latest
     container_name: rancher
+    privileged: true
     ports:
       - "80:80"
       - "443:443"
