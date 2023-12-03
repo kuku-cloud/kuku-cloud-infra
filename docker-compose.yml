@@ -9,6 +9,15 @@ services:
       - "6443:6443"
     command: server
 
+  rancher:
+    image: rancher/rancher:latest
+    container_name: rancher
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: unless-stopped
+    environment:
+      - CATTLE_K3S_SERVER_VERSION=latest
+
 volumes:
   k3s-server:
-
