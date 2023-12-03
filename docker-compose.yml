@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  k3s:
+    image: rancher/k3s
+    privileged: true
+    volumes:
+      - k3s-server:/var/lib/rancher/k3s
+    ports:
+      - "6443:6443"
+    command: server
+
+volumes:
+  k3s-server:
+
